@@ -1,8 +1,10 @@
 package br.com.etecia.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,6 +32,36 @@ public class MainActivity extends AppCompatActivity {
         });
         //criando clique nos itens de menu
 
-        idToolBar.setOnMenuItemClickListener();
+        idToolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mFavorito:
+                        Toast.makeText(getApplicationContext(), "cliquei no favorito"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mBuscar:
+                        Toast.makeText(getApplicationContext(), "cliquei no buscar"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mCompartilhar:
+                        Toast.makeText(getApplicationContext(), "cliquei no compartilhar"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mSalvar:
+                        Toast.makeText(getApplicationContext(), "cliquei no salvar"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mSair:
+                        Toast.makeText(getApplicationContext(), "cliquei no sair"
+                                , Toast.LENGTH_SHORT).show();
+                        break;
+
+
+                }
+
+                return true;
+            }
+        });
     }
 }

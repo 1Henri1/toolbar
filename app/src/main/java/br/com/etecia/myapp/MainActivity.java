@@ -20,11 +20,16 @@ public class MainActivity extends AppCompatActivity {
         // APRESENTANDO O XML PARA O JAVA
         idToolBar = findViewById(R.id.idToolBar);
 
+        // Criando clique de nevegação
         idToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "cliquei no menu hamburguer", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "cliquei no menu hamburguer"
+                        , Toast.LENGTH_SHORT).show();
             }
         });
+        //criando clique nos itens de menu
+
+        idToolBar.setOnMenuItemClickListener();
     }
 }
